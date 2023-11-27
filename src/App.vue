@@ -1,30 +1,158 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div>
+    <!-- Bootstrap Navigation Bar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #ff9900"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./assets/ComLogo.png"
+            alt="ComLogo"
+            height="35"
+            class="d-inline-block align-top"
+          />
+          Racket Radar
+          <span class="brand-text">
+            <strong>PHONE</strong> +603 1022 4197
+            <strong> EMAIL</strong> enquiry@racketradar.com
+          </span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          v-b-toggle.collapseNav
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          @click="toggleDropdown"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNav"
+          ref="navbarNav"
+          v-b-toggle.collapseNav
+        >
+          <ul class="navbar-nav">
+            <router-link
+              to="/"
+              class="nav-link"
+              @click="hideDropdown"
+              :class="{ 'active-link': $route.path === '/' }"
+              >Home</router-link
+            >
+            <router-link
+              to="/racket"
+              class="nav-link"
+              @click="hideDropdown"
+              :class="{ 'active-link': $route.path === '/racket' }"
+              >RACKET</router-link
+            >
+            <router-link
+              to="/shuttlecock"
+              class="nav-link"
+              @click="hideDropdown"
+              :class="{ 'active-link': $route.path === '/shuttlecock' }"
+              >SHUTTLECOCK</router-link
+            >
+            <router-link
+              to="/shoes"
+              class="nav-link"
+              @click="hideDropdown"
+              :class="{ 'active-link': $route.path === '/shoes' }"
+              >SHOES</router-link
+            >
+
+            <router-link
+              to="/accessories"
+              class="nav-link"
+              @click="hideDropdown"
+              :class="{ 'active-link': $route.path === '/accessories' }"
+              >ACCESSORIES</router-link
+            >
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <router-view @beforeRouteUpdate="hideDropdown" />
+  </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    toggleDropdown() {
+      if (this.$refs.navbarNav.classList.contains("show")) {
+        this.$refs.navbarNav.classList.remove("show");
+      } else {
+        this.$refs.navbarNav.classList.add("show");
+      }
+    },
+    hideDropdown() {
+      this.$refs.navbarNav.classList.remove("show");
+    },
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+/* Adjustments to the brand text */
+.brand-text {
+  font-size: 13px;
+  color: #333; /* Set your desired text color */
+  margin-left: 20px; /* Adjust margin for better positioning */
 }
 
-nav {
-  padding: 30px;
+/* Adjustments to the navigation links */
+.navbar-nav {
+  margin-left: 30px; /* Increase margin between Home and Put */
+  margin-right: 30px; /* Increase margin between Home and Put */
 }
 
-nav a {
+.navbar-nav .nav-link {
+  color: #333; /* Set your desired text color */
+  margin-right: 10px;
+  position: relative;
+  text-decoration: none; /* Remove default underline */
+  font-size: 16px;
   font-weight: bold;
-  color: #2c3e50;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.active-link {
+  color: #add8e6 !important;
+  background-color: #262626 !important;
+  padding-bottom: 2px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  text-align: center;
+}
+
+/* Adjustments to the toggler button */
+.navbar-toggler {
+  border: none; /* Remove border from toggler button */
+}
+
+.navbar-toggler-icon {
+  background-color: #ff9900;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-top: 10px; /* Add spacing on top for small screens */
+  }
+}
+.navbar-nav .dropdown-menu {
+  text-align: center;
+}
+
+.navbar-nav .dropdown-menu .nav-link {
+  display: block;
+  width: 100%;
+  text-align: left;
 }
 </style>
