@@ -149,8 +149,8 @@ export default {
 
 /* Active link styling with increased specificity */
 .navbar-nav .nav-link.active-link {
-  color: black; /* Active link font color */
-  text-decoration: underline;
+  color: black;
+  text-decoration: none;
 }
 
 .active-link::before {
