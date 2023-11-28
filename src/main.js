@@ -8,6 +8,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Import Bootstrap JavaScri
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "toastr/build/toastr.min.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 // Create the Vue app instance
 const app = createApp(App);

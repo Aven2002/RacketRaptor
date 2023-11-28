@@ -2,8 +2,8 @@
   <div>
     <!-- Bootstrap Navigation Bar -->
     <nav
-      class="navbar navbar-expand-lg navbar-light"
-      style="background-color: #ff9900"
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #3498db"
     >
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -13,7 +13,6 @@
             height="35"
             class="d-inline-block align-top"
           />
-          Racket Radar
           <span class="brand-text">
             <strong>PHONE</strong> +603 1022 4197
             <strong> EMAIL</strong> enquiry@racketradar.com
@@ -38,43 +37,47 @@
           ref="navbarNav"
           v-b-toggle.collapseNav
         >
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <router-link
               to="/"
               class="nav-link"
               @click="hideDropdown"
               :class="{ 'active-link': $route.path === '/' }"
-              >Home</router-link
             >
+              <i class="fas fa-home"></i> Home
+            </router-link>
             <router-link
               to="/racket"
               class="nav-link"
               @click="hideDropdown"
               :class="{ 'active-link': $route.path === '/racket' }"
-              >RACKET</router-link
             >
+              <i class="fas fa-medal"></i> RACKET
+            </router-link>
             <router-link
               to="/shuttlecock"
               class="nav-link"
               @click="hideDropdown"
               :class="{ 'active-link': $route.path === '/shuttlecock' }"
-              >SHUTTLECOCK</router-link
             >
+              <i class="fas fa-futbol"></i> SHUTTLECOCK
+            </router-link>
             <router-link
               to="/shoes"
               class="nav-link"
               @click="hideDropdown"
               :class="{ 'active-link': $route.path === '/shoes' }"
-              >SHOES</router-link
             >
-
+              <i class="fas fa-shoe-prints"></i> SHOES
+            </router-link>
             <router-link
               to="/accessories"
               class="nav-link"
               @click="hideDropdown"
               :class="{ 'active-link': $route.path === '/accessories' }"
-              >ACCESSORIES</router-link
             >
+              <i class="fas fa-shopping-bag"></i> ACCESSORIES
+            </router-link>
           </ul>
         </div>
       </div>
@@ -83,7 +86,7 @@
     <!-- Footer Section -->
     <footer
       class="footer mt-auto py-3"
-      style="background-color: #333; color: #fff; text-align: center"
+      style="background-color: #2c3e50; color: #ecf0f1; text-align: center"
     >
       <div class="container">
         <span>&copy; 2023 Racket Radar. All rights reserved.</span>
@@ -92,69 +95,92 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    toggleDropdown() {
-      if (this.$refs.navbarNav.classList.contains("show")) {
-        this.$refs.navbarNav.classList.remove("show");
-      } else {
-        this.$refs.navbarNav.classList.add("show");
-      }
-    },
-    hideDropdown() {
-      this.$refs.navbarNav.classList.remove("show");
-    },
-  },
-};
-</script>
-
 <style>
 /* Adjustments to the brand text */
 .brand-text {
-  font-size: 13px;
-  color: #333; /* Set your desired text color */
-  margin-left: 20px; /* Adjust margin for better positioning */
+  font-size: 14px;
+  color: #ecf0f1; /* Light text color */
+  margin-left: 20px;
 }
 
 /* Adjustments to the navigation links */
 .navbar-nav {
-  margin-left: 30px; /* Increase margin between Home and Put */
-  margin-right: 30px; /* Increase margin between Home and Put */
+  margin-left: auto;
 }
 
 .navbar-nav .nav-link {
-  color: #333; /* Set your desired text color */
-  margin-right: 10px;
+  color: #ecf0f1;
+  margin-right: 15px;
   position: relative;
-  text-decoration: none; /* Remove default underline */
+  text-decoration: none;
   font-size: 16px;
   font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .active-link {
-  color: #add8e6 !important;
-  background-color: #262626 !important;
-  padding-bottom: 2px !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-  text-align: center;
+  color: #e67e22; /* Highlight color */
+}
+
+.active-link::before {
+  content: " ";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e67e22;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.active-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Adjustments to the toggler button */
 .navbar-toggler {
-  border: none; /* Remove border from toggler button */
+  border: none;
 }
 
 .navbar-toggler-icon {
-  background-color: #ff9900;
+  background-color: #ecf0f1; /* Light background color */
 }
 
 /* Media query for responsiveness */
 @media (max-width: 768px) {
   .navbar-nav {
-    margin-top: 10px; /* Add spacing on top for small screens */
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 8px 0;
+  }
+
+  .navbar-toggler {
+    margin-right: 15px;
+  }
+
+  .navbar-collapse {
+    margin-top: 15px;
   }
 }
+
 .navbar-nav .dropdown-menu {
   text-align: center;
 }
@@ -164,8 +190,9 @@ export default {
   width: 100%;
   text-align: left;
 }
-.footer {
-  bottom: 0;
-  width: 100%;
+
+/* Font Awesome icons */
+.nav-link i {
+  margin-right: 8px;
 }
 </style>
