@@ -1,5 +1,7 @@
 <template>
   <div class="racket-view container mt-5">
+    <h1 class="mb-4">Racket List</h1>
+    <!-- Search bar aligned with the header -->
     <div class="search-bar mb-4">
       <input
         v-model="searchTerm"
@@ -8,9 +10,14 @@
         class="form-control"
         placeholder="Search for rackets..."
       />
+      <span class="search-icon" role="button" @click="filterRackets">
+        <i class="bi bi-search"></i>
+        <!-- Use "bi bi-search" for Bootstrap 5 -->
+      </span>
     </div>
-    <h1 class="mb-4">Racket List</h1>
-    <div class="row">
+
+    <!-- Check if there are products to display -->
+    <div v-if="rackets.length > 0" class="row">
       <div
         v-for="racket in rackets"
         :key="racket.id"
@@ -30,6 +37,10 @@
           </div>
         </div>
       </div>
+    </div>
+    <!-- Display a message when no products are found -->
+    <div v-else>
+      <p>No products found.</p>
     </div>
 
     <!-- Modal for Product Details -->
@@ -143,12 +154,121 @@ export default {
 </script>
 
 <style scoped>
-/* You can remove the custom styling, Bootstrap will handle it */
+body,
+h1,
+h2,
+h3,
+p,
+img,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
 
+/* Enhanced overall design for racket-view */
 .racket-view {
   font-family: "Arial", sans-serif;
+  background-color: #f9f9f9; /* Light gray background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+
 .search-bar {
-  width: 200px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Increased max-width for a more spacious feel */
+  margin-top: 20px;
+  background-color: #4285f4; /* Google Blue for a vibrant look */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+}
+
+.search-bar input {
+  width: calc(100% - 60px);
+  padding: 12px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+  transition: width 0.3s ease-in-out; /* Smooth transition for width */
+}
+
+.search-bar input:focus {
+  width: calc(100% - 80px);
+}
+
+.search-icon {
+  margin: 0 15px;
+  color: #fff;
+}
+
+.racket-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.racket-card {
+  width: 300px;
+  margin: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.racket-card:hover {
+  transform: scale(1.05);
+}
+
+.racket-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.racket-card .card-body {
+  padding: 15px;
+}
+
+.product-details {
+  text-align: left;
+  background-color: #f0f0f0; /* Light gray background for product details */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.product-details img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  margin: 5px 0;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .racket-card {
+    width: 100%;
+  }
+  .search-bar input:focus {
+    width: calc(100% - 40px);
+  }
 }
 </style>
