@@ -67,7 +67,7 @@
               <i class="fas fa-shoe-prints"></i> SHOES
             </router-link>
             <router-link
-              to="/accessories"
+              to="/accesories"
               class="nav-link"
               @click="hideDropdown"
               :class="{ 'active-link': $route.path === '/accessories' }"
