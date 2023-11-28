@@ -22,20 +22,16 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          v-b-toggle.collapseNav
-          data-bs-target="#navbarNav"
+          :aria-expanded="isDropdownOpen"
           aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
           @click="toggleDropdown"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
           class="collapse navbar-collapse"
+          :class="{ show: isDropdownOpen }"
           id="navbarNav"
-          ref="navbarNav"
-          v-b-toggle.collapseNav
         >
           <ul class="navbar-nav ml-auto">
             <router-link
@@ -95,21 +91,40 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isDropdownOpen: false,
+    };
+  },
+  methods: {
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    hideDropdown() {
+      this.isDropdownOpen = false;
+    },
+  },
+};
+</script>
+
 <style>
-/* Adjustments to the brand text */
+/* Brand text styling */
 .brand-text {
   font-size: 14px;
   color: #ecf0f1; /* Light text color */
   margin-left: 20px;
 }
 
-/* Adjustments to the navigation links */
+/* Navbar styling */
 .navbar-nav {
   margin-left: auto;
 }
 
+/* Navigation links styling */
 .navbar-nav .nav-link {
-  color: #ecf0f1;
+  color: #ffffff; /* Default font color (white) */
   margin-right: 15px;
   position: relative;
   text-decoration: none;
@@ -120,6 +135,7 @@
   animation: fadeIn 0.5s ease-in-out forwards;
 }
 
+/* Keyframes animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -131,8 +147,10 @@
   }
 }
 
-.active-link {
-  color: #e67e22; /* Highlight color */
+/* Active link styling with increased specificity */
+.navbar-nav .nav-link.active-link {
+  color: black; /* Active link font color */
+  text-decoration: underline;
 }
 
 .active-link::before {
@@ -142,7 +160,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #e67e22;
+  background-color: #e67e22; /* Active link underline color */
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-in-out;
@@ -159,17 +177,13 @@
 }
 
 .navbar-toggler-icon {
-  background-color: #ecf0f1; /* Light background color */
+  background-color: transparent !important;
 }
 
 /* Media query for responsiveness */
 @media (max-width: 768px) {
   .navbar-nav {
     margin-top: 10px;
-  }
-
-  .navbar-nav .nav-link {
-    margin: 8px 0;
   }
 
   .navbar-toggler {
@@ -181,6 +195,7 @@
   }
 }
 
+/* Dropdown menu styling */
 .navbar-nav .dropdown-menu {
   text-align: center;
 }
@@ -191,7 +206,7 @@
   text-align: left;
 }
 
-/* Font Awesome icons */
+/* Font Awesome icons styling */
 .nav-link i {
   margin-right: 8px;
 }
