@@ -1,6 +1,6 @@
 <template>
   <div class="racket-view container mt-5">
-    <h1 class="mb-4">Racket List</h1>
+    <h1 class="mb-4">Accessories List</h1>
     <!-- Search bar aligned with the header -->
     <div class="search-bar mb-4">
       <input
@@ -8,7 +8,7 @@
         @input="filterRackets"
         type="text"
         class="form-control"
-        placeholder="Search for rackets..."
+        placeholder="Search for accessories..."
       />
       <span class="search-icon" role="button" @click="filterRackets">
         <i class="bi bi-search"></i>
