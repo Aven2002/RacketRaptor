@@ -16,6 +16,13 @@
       </span>
     </div>
 
+    <!-- Enclose the button in a container -->
+    <div class="mb-4">
+      <button @click="goToAddProductView" class="btn btn-primary">
+        Add Product
+      </button>
+    </div>
+
     <!-- Check if there are products to display -->
     <div v-if="rackets.length > 0" class="row">
       <div
@@ -120,6 +127,10 @@ export default {
         .catch((error) => {
           console.error("Error getting rackets:", error);
         });
+    },
+    goToAddProductView() {
+      // Navigate to the AddProductView
+      this.$router.push("/add-product");
     },
     showProductDetails(product) {
       this.selectedProduct = product;

@@ -27,6 +27,11 @@ const routes = [
     name: "accessories",
     component: () => import("../views/AccessoriesView.vue"),
   },
+  {
+    path: "/add-product",
+    name: "AddProductView",
+    component: () => import("../views/AddProductView.vue"),
+  },
 ];
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
