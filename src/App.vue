@@ -1,22 +1,18 @@
 <template>
   <div>
-    <!-- Top Bar: ComLogo, Phone Number, Email -->
-    <div class="top-bar">
-      <div class="navbar-brand-container">
-        <div class="com-logo-container">
-          <img
-            src="./assets/ComLogo.png"
-            alt="ComLogo"
-            height="35"
-            class="d-inline-block align-top"
-          />
-        </div>
-        <div class="contact-info-container">
-          <span class="brand-text">
-            <strong>PHONE</strong> +603 1022 4197
-            <strong> EMAIL</strong> enquiry@racketradar.com
-          </span>
-        </div>
+    <!-- First Container: ComLogo, Phone Number, Email -->
+    <div class="navbar-brand-container">
+      <div class="com-logo-container">
+        <img
+          src="./assets/ComLogo.png"
+          alt="ComLogo"
+          height="35"
+          class="d-inline-block align-top com-logo"
+        />
+        <span class="brand-text">
+          <strong>PHONE</strong> +603 1022 4197
+          <strong> EMAIL</strong> enquiry@racketradar.com
+        </span>
       </div>
     </div>
 
@@ -129,8 +125,8 @@ export default {
 
 /* Navigation bar styling */
 .navbar {
-  background-color: #3498db; /* Navbar background color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+  background-color: #3498db;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight box shadow for depth */
 }
 
 .navbar-brand {
@@ -138,24 +134,29 @@ export default {
   align-items: center;
 }
 
-.com-logo {
-  margin-right: 10px; /* Adjust the margin between ComLogo and text */
+.com-logo-container img {
+  height: 35px;
+  margin-right: 10px; /* Adjust the margin as needed */
 }
 
-.contact-info {
+.contact-info-container {
   font-size: 14px;
-  color: #ecf0f1; /* Light text color */
+  color: #2c3e50; /* Dark text color */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align to the right */
 }
 
-.navbar-toggler {
-  border: none;
+/* Adjust spacing between phone and email */
+.contact-info-container strong {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* Navigation links styling */
 .navbar-nav .nav-link {
   color: #ffffff; /* Default font color (white) */
   margin-right: 15px;
-  position: relative;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -212,6 +213,17 @@ export default {
 
   .navbar-collapse {
     margin-top: 15px;
+  }
+
+  .navbar-brand-container {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: flex-start; /* Align items to the start on small screens */
+    text-align: center; /* Center text on small screens */
+  }
+
+  .contact-info-container {
+    align-items: center; /* Center contact info on small screens */
+    margin-top: 10px; /* Add margin on top for spacing */
   }
 }
 
