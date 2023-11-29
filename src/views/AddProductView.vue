@@ -15,75 +15,97 @@
 
         <form @submit.prevent="addProduct">
           <div class="form-group">
-            <label for="ProductName">Name:</label>
-            <input
-              type="text"
-              id="productName"
-              v-model="productName"
+            <label for="ProductType">Product Type:</label>
+            <select
+              id="productType"
+              v-model="productType"
               required
               class="form-control"
-              placeholder="Enter product's name..."
-            />
+            >
+              <option value="" disabled>Select product type</option>
+              <option value="Racket">Racket</option>
+              <option value="Shuttlecock">Shuttlecock</option>
+              <option value="Shoes">Shoes</option>
+              <option value="Accessories">Accessories</option>
+            </select>
           </div>
 
-          <div class="form-group">
-            <label for="ProductBrand">Brand:</label>
-            <input
-              type="text"
-              id="productBrand"
-              v-model="productBrand"
-              required
-              class="form-control"
-              placeholder="Enter product's brand..."
-            />
-          </div>
+          <div>
+            <div class="form-group">
+              <label for="ProductName">Name:</label>
+              <input
+                type="text"
+                id="productName"
+                v-model="productName"
+                required
+                class="form-control"
+                placeholder="Enter product's name..."
+              />
+            </div>
 
-          <div class="form-group">
-            <label for="ProductWeight">Weight:</label>
-            <input
-              type="text"
-              id="productWeight"
-              v-model="productWeight"
-              required
-              class="form-control"
-              placeholder="Enter product's weight..."
-            />
-          </div>
+            <div class="form-group">
+              <label for="ProductBrand">Brand:</label>
+              <input
+                type="text"
+                id="productBrand"
+                v-model="productBrand"
+                required
+                class="form-control"
+                placeholder="Enter product's brand..."
+              />
+            </div>
 
-          <div class="form-group">
-            <label for="ProductGripSize">Grip Size:</label>
-            <input
-              type="text"
-              id="productGripSize"
-              v-model="productGripSize"
-              required
-              class="form-control"
-              placeholder="Enter product's grip size..."
-            />
-          </div>
+            <!-- Additional fields based on product type -->
+            <div v-if="productType === 'Racket'">
+              <div class="form-group">
+                <label for="ProductWeight">Weight:</label>
+                <input
+                  type="text"
+                  id="productWeight"
+                  v-model="productWeight"
+                  required
+                  class="form-control"
+                  placeholder="Enter product's weight..."
+                />
+              </div>
 
-          <div class="form-group">
-            <label for="Price">Price:</label>
-            <input
-              type="text"
-              id="productPrice"
-              v-model="productPrice"
-              required
-              class="form-control"
-              placeholder="Enter product's price..."
-            />
-          </div>
+              <div class="form-group">
+                <label for="ProductGripSize">Grip Size:</label>
+                <input
+                  type="text"
+                  id="productGripSize"
+                  v-model="productGripSize"
+                  required
+                  class="form-control"
+                  placeholder="Enter product's grip size..."
+                />
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label for="Description">Description:</label>
-            <input
-              type="text"
-              id="productDescription"
-              v-model="productDescription"
-              required
-              class="form-control"
-              placeholder="Enter product's description..."
-            />
+            <div
+              v-if="productType === 'Racket' || productType === 'Shuttlecock'"
+            >
+              <div class="form-group">
+                <label for="Price">Price:</label>
+                <input
+                  type="text"
+                  id="productPrice"
+                  v-model="productPrice"
+                  required
+                  class="form-control"
+                  placeholder="Enter product's price..."
+                />
+              </div>
+            </div>
+
+            <!-- Additional fields based on product type -->
+            <div v-if="productType === 'Shoes'">
+              <!-- Add fields specific to Shoes -->
+            </div>
+
+            <div v-if="productType === 'Accessories'">
+              <!-- Add fields specific to Accessories -->
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">
@@ -99,14 +121,24 @@
 export default {
   data() {
     return {
+      productType: "",
       productName: "",
       productBrand: "",
       productWeight: "",
       productGripSize: "",
       productPrice: "",
-      productDescription: "",
       alertMessage: "",
     };
+  },
+  watch: {
+    productType: function () {
+      // Reset values when product type changes
+      this.productName = "";
+      this.productBrand = "";
+      this.productWeight = "";
+      this.productGripSize = "";
+      this.productPrice = "";
+    },
   },
   methods: {
     async addProduct() {
@@ -175,14 +207,23 @@ export default {
 .input:focus {
   border-color: #3498db;
 }
+
 .card {
   border: none;
-  border-radius: 10px;
-  background-color: red;
+  border-radius: 15px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .card-title {
   color: #333333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.card-content {
+  margin: 15px 0; /* Adjust the margin around the content */
 }
 
 .alert {
