@@ -68,12 +68,12 @@
             </h5>
             <button
               type="button"
-              class="close"
+              class="close-btn"
               data-dismiss="modal"
               aria-label="Close"
               @click="closeProductDetailsModal"
             >
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true" class="fas fa-times"></span>
             </button>
           </div>
           <div class="modal-body">
