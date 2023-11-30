@@ -12,23 +12,40 @@
         {{ alertMessage }}
       </div>
 
-      <form @submit.prevent="addProduct">
+      <form @submit.prevent="editProduct">
         <div class="form-group">
           <label for="ProductType">Product Type:</label>
-          <select
-            id="productType"
-            v-model="productType"
-            required
-            class="form-control"
-          >
-            <option value="" disabled>Select product type</option>
-            <option value="Racket">Racket</option>
-            <option value="Shuttlecock">Shuttlecock</option>
-            <option value="Shoes">Shoes</option>
-            <option value="Accessories">Accessories</option>
-          </select>
-        </div>
+          <div class="dropdown">
+            <!-- The actual dropdown with custom styling -->
+            <div class="dropdown-container">
+              <!-- Display the arrow-circle-o-left icon before the dropdown is clicked -->
+              <i
+                v-if="!isDropdownOpen"
+                class="fas fa-arrow-circle-left arrow-icon"
+              ></i>
 
+              <!-- Display the arrow-circle-down icon after the dropdown is clicked -->
+              <i
+                v-if="isDropdownOpen"
+                class="fas fa-arrow-circle-down arrow-icon"
+              ></i>
+
+              <select
+                id="productType"
+                v-model="productType"
+                required
+                class="form-control custom-dropdown"
+                @click="toggleDropdown"
+              >
+                <option value="" disabled>Select product type</option>
+                <option value="Racket">Racket</option>
+                <option value="Shuttlecock">Shuttlecock</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Accessories">Accessories</option>
+              </select>
+            </div>
+          </div>
+        </div>
         <div>
           <div class="form-group">
             <label for="ProductName">Name:</label>
@@ -122,6 +139,7 @@ export default {
       productGripSize: "",
       productPrice: "",
       alertMessage: "",
+      isDropdownOpen: false,
     };
   },
   watch: {
@@ -135,6 +153,9 @@ export default {
     },
   },
   methods: {
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
     async addProduct() {
       // Reset alert message before attempting to send a new SMS
       this.alertMessage = "";

@@ -12,7 +12,7 @@
         {{ alertMessage }}
       </div>
 
-      <form @submit.prevent="addProduct">
+      <form @submit.prevent="editProduct">
         <div class="form-group">
           <label for="ProductType">Product Type:</label>
           <div class="dropdown">
@@ -140,9 +140,6 @@ export default {
   methods: {
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
-    },
-    addProduct() {
-      // Your form submission logic
     },
   },
 };
