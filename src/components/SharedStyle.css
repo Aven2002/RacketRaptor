@@ -20,7 +20,7 @@
 .btn-success:hover,
 .btn-success:focus {
   background-color: #27ae60; /* Success button hover and focus state background color */
-  border-color:#0e2d42; /* Success button hover and focus state border color */
+  border-color: #0e2d42; /* Success button hover and focus state border color */
   color: #fff; /* Success button hover and focus state text color */
   transform: scale(1.05); /* Add a subtle scaling effect on hover */
 }
@@ -31,7 +31,8 @@
   color: #fff; /* Warning button text color */
   padding: 12px 24px; /* Adjust padding as needed */
   border-radius: 8px; /* Adjust border radius for a rounded look */
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s,
+    transform 0.3s;
   margin: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
@@ -45,11 +46,12 @@
 
 .btn-danger {
   background-color: #e74c3c; /* Danger button background color */
-  border-color: #0e2d42;/* Danger button border color */
+  border-color: #0e2d42; /* Danger button border color */
   color: #fff; /* Danger button text color */
   padding: 12px 24px; /* Adjust padding as needed */
   border-radius: 8px; /* Adjust border radius for a rounded look */
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s,
+    transform 0.3s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 .btn-danger:hover,

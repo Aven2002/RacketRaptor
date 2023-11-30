@@ -38,6 +38,18 @@ const routes = [
     component: () => import("../views/AddProductView.vue"),
     meta: { showFooter: false },
   },
+  {
+    path: "/edit-product",
+    name: "EditProductView",
+    component: () => import("../views/EditProductView.vue"),
+    meta: { showFooter: false },
+  },
+  {
+    path: "/delete-product",
+    name: "DeleteProductView",
+    component: () => import("../views/DeleteProductView.vue"),
+    meta: { showFooter: false },
+  },
 ];
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

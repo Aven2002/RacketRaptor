@@ -92,6 +92,21 @@
               <p>
                 <strong>Description:</strong> {{ selectedProduct.description }}
               </p>
+              <!-- "Edit" and "Delete" buttons within the modal body -->
+              <div class="mt-3">
+                <button
+                  @click="goToEditProductView"
+                  class="btn btn-warning btn-lg"
+                >
+                  Edit
+                </button>
+                <button
+                  @click="goToDeleteProductView"
+                  class="btn btn-danger btn-lg ml-2"
+                >
+                  Delete
+                </button>
+              </div>
             </template>
             <template v-else>
               <p>No product selected.</p>
@@ -129,8 +144,13 @@ export default {
         });
     },
     goToAddProductView() {
-      // Navigate to the AddProductView
       this.$router.push("/add-product");
+    },
+    goToEditProductView() {
+      this.$router.push("/edit-product");
+    },
+    goToDeleteProductView() {
+      this.$router.push("/delete-product");
     },
     showProductDetails(product) {
       this.selectedProduct = product;

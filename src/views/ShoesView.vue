@@ -95,13 +95,13 @@
               <!-- "Edit" and "Delete" buttons within the modal body -->
               <div class="mt-3">
                 <button
-                  @click="goToAddProductView"
+                  @click="goToEditProductView"
                   class="btn btn-warning btn-lg"
                 >
                   Edit
                 </button>
                 <button
-                  @click="goToAddProductView"
+                  @click="goToDeleteProductView"
                   class="btn btn-danger btn-lg ml-2"
                 >
                   Delete
@@ -144,8 +144,13 @@ export default {
         });
     },
     goToAddProductView() {
-      // Navigate to the AddProductView
       this.$router.push("/add-product");
+    },
+    goToEditProductView() {
+      this.$router.push("/edit-product");
+    },
+    goToDeleteProductView() {
+      this.$router.push("/delete-product");
     },
     showProductDetails(product) {
       this.selectedProduct = product;
