@@ -54,7 +54,7 @@
               id="productName"
               v-model="productName"
               required
-              class="form-control"
+              class="form-control input-field"
               placeholder="Enter product's name..."
             />
           </div>
@@ -66,7 +66,7 @@
               id="productBrand"
               v-model="productBrand"
               required
-              class="form-control"
+              class="form-control input-field"
               placeholder="Enter product's brand..."
             />
           </div>
@@ -80,7 +80,7 @@
                 id="productWeight"
                 v-model="productWeight"
                 required
-                class="form-control"
+                class="form-control input-field"
                 placeholder="Enter product's weight..."
               />
             </div>
@@ -92,7 +92,7 @@
                 id="productGripSize"
                 v-model="productGripSize"
                 required
-                class="form-control"
+                class="form-control input-field"
                 placeholder="Enter product's grip size..."
               />
             </div>
@@ -106,7 +106,7 @@
                 id="productPrice"
                 v-model="productPrice"
                 required
-                class="form-control"
+                class="form-control input-field"
                 placeholder="Enter product's price..."
               />
             </div>

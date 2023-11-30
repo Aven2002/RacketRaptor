@@ -113,7 +113,7 @@
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  border: 2px solid #3498db; /* Dropdown border color */
+  border: 2px solid transparent; /* Dropdown border color */
   border-radius: 8px; /* Dropdown border radius */
   background-color: #fff; /* Dropdown background color */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
