@@ -16,6 +16,13 @@
       </span>
     </div>
 
+    <!-- Enclose the button in a container -->
+    <div class="mb-4">
+      <button @click="goToAddProductView" class="btn btn-primary">
+        Add Product
+      </button>
+    </div>
+
     <!-- Check if there are products to display -->
     <div v-if="rackets.length > 0" class="row">
       <div
@@ -85,6 +92,21 @@
               <p>
                 <strong>Description:</strong> {{ selectedProduct.description }}
               </p>
+              <!-- "Edit" and "Delete" buttons within the modal body -->
+              <div class="mt-3">
+                <button
+                  @click="goToAddProductView"
+                  class="btn btn-warning btn-lg"
+                >
+                  Edit
+                </button>
+                <button
+                  @click="goToAddProductView"
+                  class="btn btn-danger btn-lg ml-2"
+                >
+                  Delete
+                </button>
+              </div>
             </template>
             <template v-else>
               <p>No product selected.</p>
@@ -120,6 +142,10 @@ export default {
         .catch((error) => {
           console.error("Error getting rackets:", error);
         });
+    },
+    goToAddProductView() {
+      // Navigate to the AddProductView
+      this.$router.push("/add-product");
     },
     showProductDetails(product) {
       this.selectedProduct = product;

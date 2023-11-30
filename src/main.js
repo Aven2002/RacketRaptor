@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "toastr/build/toastr.min.css";
 import "@fortawesome/fontawesome-free/css/all.css";
+import "./components/SharedStyle.css";
 
 // Create the Vue app instance
 const app = createApp(App);

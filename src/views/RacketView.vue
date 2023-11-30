@@ -18,7 +18,7 @@
 
     <!-- Enclose the button in a container -->
     <div class="mb-4">
-      <button @click="goToAddProductView" class="btn btn-primary">
+      <button @click="goToAddProductView" class="btn custom-btn">
         Add Product
       </button>
     </div>

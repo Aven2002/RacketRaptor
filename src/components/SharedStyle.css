@@ -1,0 +1,40 @@
+/* SharedStyles.css */
+
+/* Modern and Professional Button Styles */
+.custom-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db; /* Button border color */
+    border-radius: 8px; /* Button border radius */
+    color: #fff; /* Button text color */
+    background-color: #3498db; /* Button background color */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
+  }
+  
+  .custom-btn:hover {
+    background-color: #2980b9; /* Hover state background color */
+    border-color: #2980b9; /* Hover state border color */
+    color: #fff; /* Hover state text color */
+    transform: scale(1.05); /* Add a subtle scaling effect on hover */
+  }
+  
+  /* Add a smooth transition for active/focus state */
+  .custom-btn:active,
+  .custom-btn:focus {
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    outline: none; /* Remove default focus outline */
+    background-color: #1c4966; /* Active state background color */
+    border-color: #1c4966; /* Active state border color */
+    color: #fff; /* Active state text color */
+  }
+  
+  /* Add box shadow for depth */
+  .custom-btn {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
