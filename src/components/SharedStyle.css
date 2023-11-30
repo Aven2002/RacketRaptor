@@ -1,4 +1,4 @@
-/*<-- Button Section -->*/
+/*<-- Bootstrap Button Section -->*/
 .btn-primary {
   background-color: #3498db; /* Primary button background color */
   border-color: #3498db; /* Primary button border color */
@@ -60,4 +60,122 @@
   border-color: #0e2d42; /* Danger button hover and focus state border color */
   color: #fff; /* Danger button hover and focus state text color */
   transform: scale(1.05); /* Add a subtle scaling effect on hover */
+}
+
+/*<-- Input Field -->*/
+.input-field {
+  width: 100%;
+  padding: 9px; /* Increased padding for better visual comfort */
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 8px; /* Slightly reduced border radius for a modern look */
+  font-size: 15px; /* Standard font size for better readability */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.input-field:focus {
+  border-color: rgba(0, 0, 0, 0.336); /* Border color on focus */
+  box-shadow: 0 0 12px rgba(52, 152, 219, 0.6); /* Box shadow on focus */
+}
+
+/*<-- Bootsttrap Card Section -->*/
+.CRUD-card {
+  border: none;
+  border-radius: 15px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+.CRUD-card-title {
+  color: #333333;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+.CRUD-card-content {
+  margin: 15px 0;
+}
+
+/*<-- Bootsttrap Alert Section -->*/
+.alert {
+  font-size: 14px;
+  padding: 15px;
+  margin: 20px 0;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
+
+/*<-- Dropdown-->*/
+.custom-dropdown {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #3498db; /* Dropdown border color */
+  border-radius: 8px; /* Dropdown border radius */
+  background-color: #fff; /* Dropdown background color */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Dropdown arrow styling */
+.custom-dropdown::after {
+  content: "\25BC"; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #3498db; /* Arrow color */
+}
+
+/* Dropdown focus state */
+.custom-dropdown:focus {
+  border-color: #3498db; /* Border color on focus */
+  box-shadow: 0 0 12px rgba(52, 152, 219, 0.6); /* Box shadow on focus */
+}
+
+/* Dropdown hover state */
+.custom-dropdown:hover {
+  border-color: #2980b9; /* Border color on hover */
+}
+
+/* Dropdown options styling */
+.custom-dropdown-options {
+  max-height: 200px; /* Adjust the maximum height of the dropdown options */
+  overflow-y: auto; /* Enable vertical scrolling if options exceed max height */
+  border: 1px solid #ddd; /* Border color for dropdown options */
+  border-radius: 5px; /* Border radius for dropdown options */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for dropdown options */
+}
+
+/* Styling for individual dropdown options */
+.custom-dropdown-option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover state for dropdown options */
+.custom-dropdown-option:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+}
+.arrow-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Adjust the styling for the dropdown container */
+.dropdown-container {
+  position: relative;
+}
+
+/* Additional styling for the dropdown arrow */
+.custom-dropdown {
+  padding-right: 30px; /* Adjust the padding to make space for the arrow */
 }
