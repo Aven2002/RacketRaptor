@@ -85,9 +85,12 @@
       </div>
     </nav>
 
-    <!-- Router View and Footer Section -->
+    <!-- Router View -->
     <router-view @beforeRouteUpdate="hideDropdown" />
+
+    <!-- Conditionally render the footer based on the route's meta field -->
     <footer
+      v-if="$route.meta.showFooter"
       class="footer mt-auto py-3"
       style="background-color: #2c3e50; color: #ecf0f1; text-align: center"
     >
