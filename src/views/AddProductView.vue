@@ -54,6 +54,7 @@
               id="productName"
               v-model="productName"
               required
+              :disabled="!productType"
               class="form-control input-field"
               placeholder="Enter product's name..."
             />
@@ -66,6 +67,7 @@
               id="productBrand"
               v-model="productBrand"
               required
+              :disabled="!productType"
               class="form-control input-field"
               placeholder="Enter product's brand..."
             />
