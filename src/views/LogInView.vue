@@ -6,12 +6,11 @@
       alt="backgroundImg"
     />
 
-    <div class="login-view">
+    <div class="container-view">
       <div class="container-fluid">
         <div class="row">
-          <!-- Right Section with Login Card -->
           <div class="col-md-6">
-            <div class="card login-card">
+            <div class="card-view">
               <div class="card-body">
                 <h1 class="card-title text-center mb-4">Login</h1>
 
@@ -90,19 +89,15 @@ export default {
 </script>
 
 <style scoped>
-.logo-container {
-  position: relative;
-}
-
 .background-img {
   width: 100%;
   height: auto;
 }
 
-.login-view {
+.container-view {
   position: absolute;
-  top: 20px;
-  margin-left: 650px;
+  top: 170px;
+  margin-left: 50px;
   width: 80%;
   height: 100%;
   display: flex;
@@ -110,7 +105,7 @@ export default {
   justify-content: flex-end;
 }
 
-.login-card {
+.card-view {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -122,7 +117,8 @@ export default {
   font-size: 24px;
   margin-bottom: 15px;
 }
-.btn-primary {
+
+.input-field {
   width: 95%;
 }
 </style>
