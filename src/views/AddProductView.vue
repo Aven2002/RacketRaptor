@@ -79,6 +79,32 @@
             />
           </div>
 
+          <div class="form-group">
+            <label for="Price">Price:</label>
+            <input
+              type="text"
+              id="productPrice"
+              v-model="productPrice"
+              required
+              :disabled="!productType"
+              class="form-control input-field"
+              placeholder="Enter product's price..."
+              pattern="[0-9]*"
+            />
+          </div>
+          <div class="form-group">
+            <label for="productDescription">Description:</label>
+            <input
+              type="text"
+              id="productDescription"
+              v-model="productDescription"
+              required
+              :disabled="!productType"
+              class="form-control input-field"
+              placeholder="Enter product's description..."
+            />
+          </div>
+
           <!-- Additional fields based on product type -->
           <div v-if="productType === 'Racket'">
             <div class="form-group">
@@ -106,27 +132,20 @@
             </div>
           </div>
 
-          <div v-if="productType === 'Racket' || productType === 'Shuttlecock'">
-            <div class="form-group">
-              <label for="Price">Price:</label>
-              <input
-                type="text"
-                id="productPrice"
-                v-model="productPrice"
-                required
-                class="form-control input-field"
-                placeholder="Enter product's price..."
-              />
-            </div>
-          </div>
-
           <!-- Additional fields based on product type -->
           <div v-if="productType === 'Shoes'">
-            <!-- Add fields specific to Shoes -->
-          </div>
-
-          <div v-if="productType === 'Accessories'">
-            <!-- Add fields specific to Accessories -->
+            <div class="form-group">
+              <label for="Size">Size:</label>
+              <input
+                type="text"
+                id="productSize"
+                v-model="productSize"
+                required
+                class="form-control input-field"
+                placeholder="Enter product's size..."
+                pattern="[0-9]*"
+              />
+            </div>
           </div>
         </div>
 
