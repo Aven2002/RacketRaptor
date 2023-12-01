@@ -69,7 +69,7 @@
             <button
               type="button"
               class="close-btn"
-              data-dismiss="modal"
+              data-bs-dismiss="modal"
               aria-label="Close"
               @click="closeProductDetailsModal"
             >
@@ -127,6 +127,7 @@ export default {
       rackets: [],
       selectedProduct: null,
       searchTerm: "",
+      isModalOpen: false,
     };
   },
   mounted() {
@@ -154,11 +155,14 @@ export default {
     },
     showProductDetails(product) {
       this.selectedProduct = product;
+      this.isModalOpen = true;
       this.$refs.productDetailsModal.classList.add("show");
       this.$refs.productDetailsModal.style.display = "block";
     },
     closeProductDetailsModal() {
       this.selectedProduct = null;
+      this.isModalOpen = false;
+
       this.$refs.productDetailsModal.classList.remove("show");
       this.$refs.productDetailsModal.style.display = "none";
     },

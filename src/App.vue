@@ -21,7 +21,7 @@
       class="navbar navbar-expand-lg navbar-dark"
       style="background-color: #3498db"
     >
-      <div class="container">
+      <div class="container d-flex justify-content-between">
         <div class="navbar-collapse-container">
           <button
             class="navbar-toggler"
@@ -80,6 +80,17 @@
                 <i class="fas fa-shopping-bag"></i> ACCESSORIES
               </router-link>
             </ul>
+
+            <button
+              @click="goToLogInView"
+              class="btn btn-danger"
+              :style="{
+                'margin-left': isDropdownOpen ? '0' : '380px',
+                'margin-top': !isDropdownOpen ? '0' : '50px',
+              }"
+            >
+              <i class="fas fa-sign-out-alt"></i> Log Out
+            </button>
           </div>
         </div>
       </div>
@@ -114,6 +125,9 @@ export default {
     },
     hideDropdown() {
       this.isDropdownOpen = false;
+    },
+    goToLogInView() {
+      this.$router.push("/log-in");
     },
   },
 };

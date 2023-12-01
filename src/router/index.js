@@ -50,6 +50,12 @@ const routes = [
     component: () => import("../views/DeleteProductView.vue"),
     meta: { showFooter: false },
   },
+  {
+    path: "/log-in",
+    name: "LogInView",
+    component: () => import("../views/LogInView.vue"),
+    meta: { showFooter: true },
+  },
 ];
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
