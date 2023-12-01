@@ -128,10 +128,10 @@ export default {
 }
 
 .input-field {
-  width: 95%;
+  width: 90%;
 }
 .btn-primary {
   width: 90%;
-  margin-left: 20px;
+  margin: 20px 20px;
 }
 </style>

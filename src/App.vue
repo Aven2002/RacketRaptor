@@ -9,6 +9,11 @@
           height="35"
           class="d-inline-block align-top com-logo"
         />
+        <img
+          class="header-img"
+          src="./assets/ComHeader.png"
+          alt="backgroundImg"
+        />
         <span class="brand-text">
           <strong>PHONE</strong> +603 1022 4197
           <strong> EMAIL</strong> enquiry@racketradar.com
@@ -154,21 +159,7 @@ export default {
 
 .com-logo-container img {
   height: 35px;
-  margin-right: 10px; /* Adjust the margin as needed */
-}
-
-.contact-info-container {
-  font-size: 14px;
-  color: #2c3e50; /* Dark text color */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* Align to the right */
-}
-
-/* Adjust spacing between phone and email */
-.contact-info-container strong {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 20px;
 }
 
 /* Navigation links styling */
@@ -262,5 +253,8 @@ export default {
   color: #ecf0f1;
   text-align: center;
   padding: 15px 0;
+}
+.brand-text {
+  margin: 20px 250px;
 }
 </style>
