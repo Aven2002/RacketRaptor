@@ -2,7 +2,7 @@
   <div class="logo-container">
     <img
       class="background-img"
-      src="../assets/LogInBackground.png"
+      src="../assets/MainBackground.png"
       alt="backgroundImg"
     />
 
@@ -23,7 +23,7 @@
                     <input
                       type="text"
                       v-model="username"
-                      class="form-control input-field"
+                      class="form-control"
                       id="username"
                       required
                     />
@@ -34,17 +34,42 @@
                     <input
                       type="password"
                       v-model="password"
-                      class="form-control input-field"
+                      class="form-control"
                       id="password"
                       required
                     />
                   </div>
 
                   <!-- Login Button -->
-                  <button type="submit" class="btn btn-primary btn-block">
-                    Login
-                  </button>
+                  <button type="submit" class="btn btn-primary">Log in</button>
                 </form>
+                <div
+                  class="text-center"
+                  style="margin: 25px; display: flex; align-items: center"
+                >
+                  <hr
+                    style="
+                      flex: 1;
+                      border-top: 1px solid black;
+                      margin-right: 10px;
+                    "
+                  />
+                  <span>or</span>
+                  <hr
+                    style="
+                      flex: 1;
+                      border-top: 1px solid black;
+                      margin-left: 10px;
+                    "
+                  />
+                </div>
+
+                <!-- Link to the register view -->
+                <p class="mt-3 text-center">
+                  <router-link to="/register">
+                    Sign up for RacketRadar</router-link
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -53,6 +78,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    goToRegisterView() {
+      this.$router.push("/register");
+    },
+  },
+};
+</script>
 
 <style scoped>
 .logo-container {
@@ -87,7 +122,7 @@
   font-size: 24px;
   margin-bottom: 15px;
 }
-.input-field {
+.btn-primary {
   width: 95%;
 }
 </style>

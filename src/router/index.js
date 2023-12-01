@@ -83,6 +83,15 @@ const routes = [
       showLogOutBtn: false,
     },
   },
+  {
+    path: "/register",
+    name: "RegisterView",
+    component: () => import("../views/RegisterView.vue"),
+    meta: {
+      showFooter: true,
+      showLogOutBtn: false,
+    },
+  },
 ];
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
