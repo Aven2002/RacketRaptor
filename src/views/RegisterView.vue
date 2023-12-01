@@ -12,8 +12,11 @@
           <div class="col-md-6">
             <div class="card-view">
               <div class="card-body">
-                <h2 class="card-title text-center mb-4">Register</h2>
-
+                <img
+                  class="header-img"
+                  src="../assets/ComHeader.png"
+                  alt="backgroundImg"
+                />
                 <!-- Your registration form goes here -->
                 <form @submit.prevent="register">
                   <!-- Form Inputs (e.g., Name, Email, Password) -->
@@ -51,9 +54,7 @@
                   </div>
 
                   <!-- Registration Button -->
-                  <button type="submit" class="btn btn-primary btn-block">
-                    Register
-                  </button>
+                  <button type="submit" class="btn btn-primary">Sign Up</button>
                 </form>
               </div>
             </div>
@@ -93,6 +94,11 @@ export default {
   width: 100%;
   height: auto;
 }
+.header-img {
+  width: 80%;
+  height: auto;
+  margin: 30px;
+}
 
 .container-view {
   position: absolute;
@@ -119,6 +125,10 @@ export default {
 }
 
 .input-field {
-  width: 95%;
+  width: 90%;
+}
+.btn-primary {
+  width: 90%;
+  margin: 20px 20px;
 }
 </style>

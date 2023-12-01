@@ -12,7 +12,11 @@
           <div class="col-md-6">
             <div class="card-view">
               <div class="card-body">
-                <h1 class="card-title text-center mb-4">Login</h1>
+                <img
+                  class="header-img"
+                  src="../assets/ComHeader.png"
+                  alt="backgroundImg"
+                />
 
                 <!-- Your Login Form Goes Here -->
                 <form @submit.prevent="login">
@@ -93,6 +97,11 @@ export default {
   width: 100%;
   height: auto;
 }
+.header-img {
+  width: 80%;
+  height: auto;
+  margin: 30px;
+}
 
 .container-view {
   position: absolute;
@@ -120,5 +129,9 @@ export default {
 
 .input-field {
   width: 95%;
+}
+.btn-primary {
+  width: 90%;
+  margin-left: 20px;
 }
 </style>
