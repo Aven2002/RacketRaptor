@@ -83,7 +83,8 @@
 
             <button
               @click="goToLogInView"
-              class="btn btn-danger"
+              v-if="$route.meta.showLogOutBtn"
+              class="btn btn-outline-danger"
               :style="{
                 'margin-left': isDropdownOpen ? '0' : '380px',
                 'margin-top': !isDropdownOpen ? '0' : '50px',
