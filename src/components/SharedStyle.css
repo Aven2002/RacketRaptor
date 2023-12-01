@@ -28,6 +28,7 @@
 .btn-warning {
   background-color: #f39c12; /* Warning button background color */
   border-color: #f39c12; /* Warning button border color */
+  font-size: 13px;
   color: #fff; /* Warning button text color */
   padding: 12px 24px; /* Adjust padding as needed */
   border-radius: 8px; /* Adjust border radius for a rounded look */
@@ -46,9 +47,10 @@
 
 .btn-danger {
   background-color: #e74c3c; /* Danger button background color */
+  font-size: 13px;
   border-color: #0e2d42; /* Danger button border color */
   color: #fff; /* Danger button text color */
-  padding: 12px 24px; /* Adjust padding as needed */
+  padding: 12px 20px; /* Adjust padding as needed */
   border-radius: 8px; /* Adjust border radius for a rounded look */
   transition: background-color 0.3s, border-color 0.3s, color 0.3s,
     transform 0.3s;

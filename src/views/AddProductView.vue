@@ -1,8 +1,14 @@
 <template>
-  <div class="push-view text-center mt-5">
+  <button
+    @click="goBack"
+    class="btn btn-outline-danger mt-3"
+    style="margin-left: 1000px; font-size: 15px"
+  >
+    <i class="fas fa-arrow-left"></i> Go Back
+  </button>
+  <div class="push-view text-center mt-2">
     <div class="CRUD-card">
       <h2 class="CRUD-card-title text-center mb-4">Add a product</h2>
-
       <!-- Display alert message if it exists -->
       <div
         v-if="alertMessage"
@@ -157,6 +163,10 @@ export default {
   methods: {
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    goBack() {
+      // Alternatively, you can use this method to go back
+      this.$router.go(-1);
     },
     async addProduct() {
       // Reset alert message before attempting to send a new SMS
